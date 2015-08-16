@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>Thrillophilia</title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- UnderScore -->
+    <script src="lib/underscore/underscore.min.js"></script>
+    <script src="app/utils/services/underscore-service.js"></script>
+
+    <!-- Cordova script (this will be a 404 during development) -->
+    <!--<script src="cordova.js"></script>-->
+
+    <!-- App's Javascript Files -->
+    <script src="app/app.js"></script>
+    <script src="app/landingPages/controllers/details-controller.js"></script>
+    <script src="app/landingPages/services/landing.js"></script>
+    <script src="app/utils/directives/compile-template.js"></script>
+
+</head>
+<body ng-app="thrillophilia" ng-controller="AppCtrl" style="font-family: 'Roboto', sans-serif;">
+
+<ion-nav-bar class="bar-assertive">
+    <ion-nav-back-button>
+    </ion-nav-back-button>
+</ion-nav-bar>
+
+<ion-nav-view></ion-nav-view>
+
+</body>
+</html>

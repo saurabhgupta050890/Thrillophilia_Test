@@ -1,0 +1,43 @@
+<ion-view>
+    <ion-nav-buttons></ion-nav-buttons>
+    <ion-tabs class="tabs-assertive tabs-top tabs-striped">
+        <ion-tab title="TOURS">
+            <ion-content style="padding-top: 93px">
+                <div class="list">
+                    <div class="no-padding no-margin" ng-repeat="tour in tours track by tour.id">
+                        <div class="item item-body no-padding no-border">
+                            <img class="full-image image-cover" ng-src="{{tour.thumbnail_image.size_lp_medium || tour.thumbnail_image.size_large}}">
+                            <div class="image-tint"></div>
+                            <div class="image-overlay-center text-center">
+                                <span>{{tour.name | uppercase}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center padding-horizontal" style="margin-top: 100px;color: #a2a2a2;font-size: larger" ng-cloak ng-if="tours.length == 0">
+                    <i class="icon ion-sad" style="font-size: xx-large"></i>
+                    <div> Sorry !! Nothing to display right now. Please come back later.</div>
+                </div>
+            </ion-content>
+        </ion-tab>
+        <ion-tab title="ACTIVITIES" ng-if="activities.length > 0">
+            <ion-content style="padding-top: 93px">
+                <div class="list card no-padding" ng-repeat="activity in activities track by activity.id">
+                    <div class="item item-body no-padding">
+                        <div style="position:relative">
+                            <img ng-if="activity.start_image" class="full-image" ng-src="{{activity.start_image.size_lp_medium || start_image.size_large}}">
+                            <div class="image-tint"></div>
+                            <div class="image-overlay-bottom-left">
+                                <span>{{activity.heading | uppercase}}</span>
+                            </div>
+                        </div>
+                        <p ng-if="activity.content" class="padding">
+                            <tp-rich-text dynamic-template="{{activity.content}}" dynamic-data="{{activity}}"></tp-rich-text>
+                        </p>
+                        <img ng-if="activity.end_image" class="full-image" ng-src="{{activity.end_image.size_lp_medium || end_image.size_large}}">
+                    </div>
+                </div>
+            </ion-content>
+        </ion-tab>
+    </ion-tabs>
+</ion-view>

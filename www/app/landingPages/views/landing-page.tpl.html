@@ -1,0 +1,20 @@
+<ion-view view-title="DISCOVER">
+    <ion-content class="stable-bg">
+        <ion-refresher spinner="circles" on-refresh="refreshList()">
+        </ion-refresher>
+        <div class="list no-padding no-margin" ng-repeat="landingPage in landingPageList track by landingPage.id" ng-click="showLandingPage(landingPage.id)">
+            <div class="item item-body no-padding no-border">
+                <img class="img-full image-cover" ng-src="{{landingPage.image.size_lp_medium || landingPage.image.size_large}}">
+                <div class="image-tint"></div>
+                <div class="image-overlay-center text-center">
+                    <span>{{landingPage.title | uppercase}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="center padding-horizontal" style="margin-top: 150px;color: #a2a2a2;font-size: larger" ng-if="landingPageList.length == 0 && !loadMore" ng-cloak>
+            <i class="icon ion-sad"></i>
+            <div> Sorry !! Nothing to display right now. Please come back later.</div>
+        </div>
+        <ion-infinite-scroll ng-if="loadMore" on-infinite="loadLandingPageList()" distance="5%" ></ion-infinite-scroll>
+    </ion-content>
+</ion-view>
