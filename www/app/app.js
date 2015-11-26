@@ -2,7 +2,7 @@
  * Created by Saurabh on 16-Aug-15.
  */
 //  Edited By :Anurag Anand 
-// Saurabh Gupta
+// Thrid party changes
 var appModule = angular.module('thrillophilia',['ionic','services.underscore','directives.compileTemplate']);
 
 appModule.config(['$stateProvider','$urlRouterProvider','$ionicConfigProvider','$httpProvider',function($stateProvider, $urlRouterProvider,$ionicConfigProvider,$httpProvider) {
